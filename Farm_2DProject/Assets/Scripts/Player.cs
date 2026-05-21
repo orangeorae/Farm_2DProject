@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using static Player_AnimController;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private Player_AnimController Player_animController;
     [SerializeField] private float moveSpeed = 5f;
-
+    public JoyStick joyStick;
 
     private SpriteRenderer spriteRenderer; // SpriteRenderer 참조 
 
@@ -22,40 +23,20 @@ public class Player : MonoBehaviour
 
     private void Player_AnimMove()
     {
-        float move_AD = Input.GetAxisRaw("Horizontal");
+        Vector2 direction = joyStick.GetDirection(); // 조이스틱으로 입력 빋은 방향 가져옴 
 
-        float move_WS = Input.GetAxisRaw("Vertical");
-
-        Vector3 dir = new Vector3(move_AD, move_WS);
-
-        dir.Normalize(); // 모든 방향의 속도가 같도록 정규화
-
-        dir = transform.TransformDirection(dir);
-        if (move_AD != 0 || move_WS != 0)
+        if (direction.magnitude > 0)
         {
             Player_animController.SetPlayerAnimState(Player_AnimState.Walk);
-            transform.position = transform.position + dir *moveSpeed * Time.deltaTime;
+            Vector3 move_Trans = new Vector3(direction.x, direction.y, 0) * moveSpeed * Time.deltaTime; // 실제 이동할 거리 계산
 
-            if(move_AD > 0)
-            {
-                spriteRenderer.flipX = false; // 오른쪽 이동 그대로 
-            }
-
-            else if (move_AD < 0)
-            {
-                spriteRenderer.flipX = true; // 왼쪽 이동시 반전
-
-            }
-
+            transform.Translate(move_Trans); // 캐릭터 이동 
         }
-        else if (move_AD == 0 && move_WS == 0)
-        {
-            Player_animController.SetPlayerAnimState(Player_AnimState.Idle);
 
-            if (Input.GetKey(KeyCode.F))
-            {
-                Player_animController.SetPlayerAnimState(Player_AnimState.Harvest);
-            }
+        else
+        {
+
+            Player_animController.SetPlayerAnimState(Player_AnimState.Idle);
         }
     }
 }
