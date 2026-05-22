@@ -36,7 +36,7 @@ public class JoyStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     public Vector2 GetDirection()
     {
-        return inputDirection;
+        return inputDirection; // 계산된 값 반환 
     }
 
 }
