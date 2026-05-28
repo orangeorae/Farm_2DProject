@@ -9,9 +9,12 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     public JoyStick joyStick;
     public Button harvestBtn;
+    public Vector2Int lookDir; // 게임 시작시 아래 방향 보기 
     private bool isHarvest = false;
 
     private SpriteRenderer spriteRenderer; // SpriteRenderer 참조 
+
+    public Vector2Int LookDir { get; private set; } = Vector2Int.down;
 
     private void OnEnable()
     {
@@ -37,6 +40,7 @@ public class Player : MonoBehaviour
     private void Player_AnimMove()
     {
         Vector2 direction = joyStick.GetDirection(); // 조이스틱으로 입력 받은 방향 가져옴 
+       // Debug.Log(direction); // 조이스틱 값 확인용
 
         if (direction.magnitude > 0)
         {
@@ -45,14 +49,25 @@ public class Player : MonoBehaviour
 
             transform.Translate(move_Trans); // 캐릭터 이동 
 
-            if (direction.x > 0f)
+            if (direction.x > 0.1f)
             {
                 spriteRenderer.flipX = false;
+                LookDir = Vector2Int.right; //플레이어 방향 저장 
             }
            // 이미지를 좌우 반전 (flipX = true)
-            else if (direction.x < 0f)
+            else if (direction.x < -0.1f)
             {
                 spriteRenderer.flipX = true;
+                LookDir = Vector2Int.left; //플레이어 방향 저장
+            }
+
+            else if (direction.y > 0.1f)
+            {
+                LookDir = Vector2Int.up;
+            }
+            else if (direction.y < -0.1f)
+            {
+                LookDir = Vector2Int.down;
             }
         }
 

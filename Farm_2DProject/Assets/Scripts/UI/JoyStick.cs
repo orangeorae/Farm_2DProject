@@ -5,6 +5,8 @@ using UnityEngine.EventSystems; //터치 이벤트
 public class JoyStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
 
+    [SerializeField] private RectTransform background;
+
     public RectTransform handle;
     private Vector2 inputDirection;
 
@@ -18,13 +20,26 @@ public class JoyStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     // 드래그하는 동안 매 프레임 실행 될 함수
     public void OnDrag(PointerEventData eventData)
     {
-        handle.position = eventData.position; // 손잡이를 터치한 위치로 이동
 
-        //조이스틱 범위를 벗어나지 않게 반지름을 90으로 제한
-        handle.anchoredPosition = Vector2.ClampMagnitude(handle.anchoredPosition, radius);
+        Vector2 pos; // 최종 위치 담아둘 변수 
 
-        //입력 방향 계산(-1 ~ 1 사이의 값)
-        inputDirection = handle.anchoredPosition / radius;
+        // 화면 좌표를 조이스틱 내부 좌표로 변환하기 위함 
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            background, // 배경의 정중앙을 (0,0)으로 하기 위함
+            eventData.position, // 손가락이 누르고 있는 화면 좌표
+            eventData.pressEventCamera, // 캔버스 카메라 정보
+            out pos //변환이 완료된 조이스틱 기준 좌표를 pos 변수에 담는다
+        );
+
+        // 조이스틱 범위 제한
+        pos = Vector2.ClampMagnitude(pos, radius);
+
+        // 손잡이 이동
+        handle.anchoredPosition = pos;
+
+        // 방향값 계산
+        inputDirection = pos / radius;
+
     }
 
     public void OnPointerUp(PointerEventData eventData)
