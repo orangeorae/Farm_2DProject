@@ -7,7 +7,9 @@ public class Player_AnimController : MonoBehaviour
         None = 0,
         Idle = 1,
         Walk = 2,
-        Harvest = 3
+        Harvest = 3,
+        Water = 4,
+        Plant = 5
     }
 
     [SerializeField] private Animator Player_Animator;
@@ -29,6 +31,12 @@ public class Player_AnimController : MonoBehaviour
             case Player_AnimState.Harvest:
                 Player_Animator.SetBool("IsHarvest", true);
                 break;
+            case Player_AnimState.Water:
+                Player_Animator.SetBool("IsWater", true);
+                break;
+            case Player_AnimState.Plant:
+                Player_Animator.SetBool("IsPlant", true);
+                break;
 
             default:
                 ResetAllAnimParameters();
@@ -41,5 +49,7 @@ public class Player_AnimController : MonoBehaviour
     {
         Player_Animator.SetBool("IsWalk", false);
         Player_Animator.SetBool("IsHarvest", false);
+        Player_Animator.SetBool("IsWater", false);
+        Player_Animator.SetBool("IsPlant", false);
     }
 }

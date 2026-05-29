@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 7cac47e9952414c46b725a2daa81849e
+guid: b094b3aff8f40f34db99045729e146ae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5859083586626064994
-    second: Carrot_0
+      213: 5346928031986697999
+    second: Carrot_Seed_0
   - first:
-      213: -2094157912208876536
-    second: Carrot_1
+      213: -3494964858285672760
+    second: Carrot_Seed_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1500
+  spritePixelsToUnits: 2048
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Carrot_0
+      name: Carrot_Seed_0
       rect:
         serializedVersion: 2
-        x: 695
-        y: 165
-        width: 714
-        height: 1807
+        x: 708
+        y: 290
+        width: 828
+        height: 1348
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,8 +144,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e9de4dd458a50bea0800000000000000
-      internalID: -5859083586626064994
+      spriteID: f07452247ba143a40800000000000000
+      internalID: 5346928031986697999
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: baed5f41cddc19c488a97d4648fa5168
+    spriteID: b4845dac9a666494abb6d84c8ce18fb1
     internalID: 0
     vertices: []
     indices: 
@@ -164,8 +164,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Carrot_0: -5859083586626064994
-      Carrot_1: -2094157912208876536
+      Carrot_Seed_0: 5346928031986697999
+      Carrot_Seed_1: -3494964858285672760
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

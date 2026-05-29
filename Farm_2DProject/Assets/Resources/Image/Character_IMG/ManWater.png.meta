@@ -1,0 +1,467 @@
+fileFormatVersion: 2
+guid: e538d53f073a810479eaa287116b4126
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6836828886532521271
+    second: ManWater_0
+  - first:
+      213: 5325676680729905236
+    second: ManWater_1
+  - first:
+      213: -1732046971801830605
+    second: ManWater_2
+  - first:
+      213: 1524510678728324647
+    second: ManWater_3
+  - first:
+      213: -7845572715845904822
+    second: ManWater_4
+  - first:
+      213: 4270524389071735026
+    second: ManWater_5
+  - first:
+      213: -4719141452456661648
+    second: ManWater_6
+  - first:
+      213: -9210862573339356270
+    second: ManWater_7
+  - first:
+      213: -2532613684977441367
+    second: ManWater_8
+  - first:
+      213: -9190760229241177529
+    second: ManWater_9
+  - first:
+      213: -6163683413269310610
+    second: ManWater_10
+  - first:
+      213: 2397779402697162482
+    second: ManWater_11
+  - first:
+      213: 4723877693799736416
+    second: ManWater_12
+  - first:
+      213: -5404922448187597924
+    second: ManWater_13
+  - first:
+      213: -2030973261056021346
+    second: ManWater_14
+  - first:
+      213: -210029997463571164
+    second: ManWater_15
+  - first:
+      213: -6571426003133735755
+    second: ManWater_16
+  - first:
+      213: 7404212526290522362
+    second: ManWater_17
+  - first:
+      213: 3679427956466730784
+    second: ManWater_18
+  - first:
+      213: -7810515722458730152
+    second: ManWater_19
+  - first:
+      213: -2122817419180167664
+    second: ManWater_20
+  - first:
+      213: -2572332312717763437
+    second: ManWater_21
+  - first:
+      213: -3126899684813983540
+    second: ManWater_22
+  - first:
+      213: 634307914147938975
+    second: ManWater_23
+  - first:
+      213: -778531888010593235
+    second: ManWater_24
+  - first:
+      213: -5674378943166776182
+    second: ManWater_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ManWater_0
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 815
+        width: 306
+        height: 546
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2891cc954be11a0800000000000000
+      internalID: -6836828886532521271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ManWater_1
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 814
+        width: 301
+        height: 547
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 458cc7779ba98e940800000000000000
+      internalID: 5325676680729905236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ManWater_2
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 816
+        width: 335
+        height: 545
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33bf577b47886f7e0800000000000000
+      internalID: -1732046971801830605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ManWater_4
+      rect:
+        serializedVersion: 2
+        x: 1745
+        y: 804
+        width: 458
+        height: 557
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a46128cbe2dee1390800000000000000
+      internalID: -7845572715845904822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ManWater_6
+      rect:
+        serializedVersion: 2
+        x: 2214
+        y: 810
+        width: 465
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07def712add328eb0800000000000000
+      internalID: -4719141452456661648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ManWater_14
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 131
+        width: 464
+        height: 564
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9c6072649880d3e0800000000000000
+      internalID: -2030973261056021346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ManWater_16
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 123
+        width: 470
+        height: 572
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bcd277fdda9dc4a0800000000000000
+      internalID: -6571426003133735755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ManWater_18
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 115
+        width: 408
+        height: 579
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02747d16b34ff0330800000000000000
+      internalID: 3679427956466730784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ManWater_19
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 142
+        width: 350
+        height: 553
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8517e3215597b9390800000000000000
+      internalID: -7810515722458730152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ManWater_20
+      rect:
+        serializedVersion: 2
+        x: 2196
+        y: 140
+        width: 306
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01e21ceedcc3a82e0800000000000000
+      internalID: -2122817419180167664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9c59905bf54144a418bbad3e433f2e0f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ManWater_0: -6836828886532521271
+      ManWater_1: 5325676680729905236
+      ManWater_10: -6163683413269310610
+      ManWater_11: 2397779402697162482
+      ManWater_12: 4723877693799736416
+      ManWater_13: -5404922448187597924
+      ManWater_14: -2030973261056021346
+      ManWater_15: -210029997463571164
+      ManWater_16: -6571426003133735755
+      ManWater_17: 7404212526290522362
+      ManWater_18: 3679427956466730784
+      ManWater_19: -7810515722458730152
+      ManWater_2: -1732046971801830605
+      ManWater_20: -2122817419180167664
+      ManWater_21: -2572332312717763437
+      ManWater_22: -3126899684813983540
+      ManWater_23: 634307914147938975
+      ManWater_24: -778531888010593235
+      ManWater_25: -5674378943166776182
+      ManWater_3: 1524510678728324647
+      ManWater_4: -7845572715845904822
+      ManWater_5: 4270524389071735026
+      ManWater_6: -4719141452456661648
+      ManWater_7: -9210862573339356270
+      ManWater_8: -2532613684977441367
+      ManWater_9: -9190760229241177529
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -12,21 +12,13 @@ public class FarmSystem : MonoBehaviour
 
     [SerializeField] private Player player; // 플레이어 위치 가져오기
 
-    //private bool isPlant= false; //심기 여부
-
     private Dictionary<Vector3Int, GameObject> crops = new Dictionary<Vector3Int, GameObject>(); // 같은 간 중복 심기 방지
     //Vector3Int  - 타일 칸 좌표  Ex) Vector3Int cellPos = (2, 3, 0) -> (2,3) 
     // TileMap 함수 기반들이 Vector3Int 기반 그래서 Vector2Int를 써도 되는 데
     // Vector3Int를 사용하면 변환과정없이 바로 사용가능해서 코드가 더 간결해진다
 
 
-    public void OnPlantBtn()
-    {
-        PlantCrop();
-    }
-
-
-    private void PlantCrop()
+    public void PlantCrop()
     {
 
         Vector3 playerPos =player.transform.position +  new Vector3(0, -0.6f, 0); // 캐릭터 중심위치에서 Y축을 아래로 내려 안전하게 땅의 좌표가 담기게 한다
@@ -78,6 +70,54 @@ public class FarmSystem : MonoBehaviour
         crops.Add(targetCell, crop); 
 
         Debug.Log("심기 성공");
+    }
+
+    public void WaterCrop()
+    {
+        Vector3 playerPos = player.transform.position + new Vector3(0, -0.6f, 0);
+        Vector3Int playerCell = farmTileMap.WorldToCell(playerPos);
+        Vector3Int targetCell = playerCell;
+        bool foundFarm = false;
+
+        // 심을 때와 동일한 로직
+        for (int x = -2; x <= 2; x++)
+        {
+            for (int y = -2; y <= 2; y++)
+            {
+                Vector3Int checkCell = playerCell + new Vector3Int(x, y, 0);
+
+                if (farmTileMap.HasTile(checkCell))
+                {
+                    targetCell = checkCell;
+                    foundFarm = true;
+                    break;
+                }
+            }
+            if (foundFarm) break;
+        }
+
+        if (foundFarm == false)
+        {
+            Debug.Log("물 줄 밭이 근처에 없습니다.");
+            return;
+        }
+
+        // 해당 좌표에 심어진 작물이 있다면 상태 변경 요청
+        if (crops.ContainsKey(targetCell))
+        {
+            GameObject currentCropObj = crops[targetCell]; // 해당 좌표에 매칭되어 있는 작물 가져오기
+            CropPlot plotScript = currentCropObj.GetComponent<CropPlot>(); //작물 상태 가져오기
+
+            if (plotScript != null)
+            {
+                // 현재 상태가 씨앗상태일 때만 작동
+                if (plotScript.currentState == CropPlot.PlotState.Planted)
+                {
+                    plotScript.WaterPlot();
+                    Debug.Log("물주기 최종 성공 -> 당근 완성!");
+                }
+            }
+        }
     }
 
 

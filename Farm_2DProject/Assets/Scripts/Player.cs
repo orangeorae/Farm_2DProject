@@ -7,10 +7,18 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Player_AnimController Player_animController;
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private FarmSystem farmSystem;
     public JoyStick joyStick;
+
+    public Button plantBtn;
     public Button harvestBtn;
+    public Button waterBtn;
+
+
     public Vector2Int lookDir; // 게임 시작시 아래 방향 보기 
     private bool isHarvest = false;
+    private bool isWater= false;
+    private bool isPlant = false;
 
     private SpriteRenderer spriteRenderer; // SpriteRenderer 참조 
 
@@ -19,11 +27,15 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
         harvestBtn.onClick.AddListener(Onclick_Harvest);
+        waterBtn.onClick.AddListener(Onclick_Water);
+        plantBtn.onClick.AddListener(Onclick_Plant);
     }
 
     private void OnDisable()
     {
         harvestBtn.onClick.RemoveAllListeners();
+        waterBtn.onClick.RemoveAllListeners();
+        plantBtn.onClick.RemoveAllListeners();
     }
     private void Awake()
     {
@@ -34,6 +46,8 @@ public class Player : MonoBehaviour
     private void Update()
     {
         if (isHarvest) return;
+        if (isWater) return;
+        if (isPlant) return;
         Player_AnimMove();
     }
 
@@ -89,6 +103,45 @@ public class Player : MonoBehaviour
     private void End_Harvest()
     {
         isHarvest = false;
+        Player_animController.SetPlayerAnimState(Player_AnimState.Idle);
+    }
+
+
+    public void Onclick_Water()
+    {
+        isWater = true;
+        Player_animController.SetPlayerAnimState(Player_AnimState.Water);
+
+        if (farmSystem != null)
+        {
+            farmSystem.WaterCrop();
+        }
+
+        Invoke(nameof(End_Water), 0.7f); 
+    }
+
+    private void End_Water()
+    {
+        isWater = false;
+        Player_animController.SetPlayerAnimState(Player_AnimState.Idle);
+    }
+
+    public void Onclick_Plant()
+    {
+        isPlant = true;
+        Player_animController.SetPlayerAnimState(Player_AnimState.Plant);
+
+        if (farmSystem != null)
+        {
+            farmSystem.PlantCrop();
+        }
+
+        Invoke(nameof(End_Plant), 0.7f); 
+    }
+
+    private void End_Plant()
+    {
+        isPlant = false;
         Player_animController.SetPlayerAnimState(Player_AnimState.Idle);
     }
 
