@@ -14,8 +14,6 @@ public class Player : MonoBehaviour
     public Button harvestBtn;
     public Button waterBtn;
 
-
-    public Vector2Int lookDir; // 게임 시작시 아래 방향 보기 
     private bool isHarvest = false;
     private bool isWater= false;
     private bool isPlant = false;
@@ -91,13 +89,37 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision ) //Is Trigger가 켜진 밭에 진입했을 때 호출
+    {
+        CropPlot plot = collision.GetComponent<CropPlot>(); // CropPlot 스크립트가 있는지 찾기 
+        if (plot != null && farmSystem != null)
+        {
+            farmSystem.SetTargetPlot(plot); // 주소 보관
+            Debug.Log("농사 영역 진입");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) // 구역 밖으로 완전히 나왔을 때 호출
+    {
+        CropPlot plot = collision.GetComponent<CropPlot>();
+        if (plot != null && farmSystem != null)
+        {
+            farmSystem.RemoveTargetPlot(plot); // 주소 삭제 
+            Debug.Log("농사 영역 이탈");
+        }
+    }
+
     public void Onclick_Harvest()
     {
-        isHarvest = true;
-        Player_animController.SetPlayerAnimState(Player_AnimState.Harvest);
+        if (farmSystem == null || isHarvest || isWater || isPlant) return;
 
-        Invoke(nameof(End_Harvest), 0.7f); 
-        //nameof(EndHarvest) == "EndHarvest"  -> 나중에 함수 이름을 바꿨을 때 에러날 경우를 대비해서
+        if (farmSystem.HarvestCrop()) //farmSystem에 수확 실행 지시 
+        {
+            isHarvest = true;
+            Player_animController.SetPlayerAnimState(Player_AnimState.Harvest);
+            Invoke(nameof(End_Harvest), 0.7f);
+            //nameof(EndHarvest) == "EndHarvest"  -> 나중에 함수 이름을 바꿨을 때 에러날 경우를 대비해서
+        }
     }
 
     private void End_Harvest()
@@ -109,15 +131,15 @@ public class Player : MonoBehaviour
 
     public void Onclick_Water()
     {
-        isWater = true;
-        Player_animController.SetPlayerAnimState(Player_AnimState.Water);
 
-        if (farmSystem != null)
+        if (farmSystem == null || isHarvest || isWater || isPlant) return;
+
+        if (farmSystem.WaterCrop())
         {
-            farmSystem.WaterCrop();
+            isWater = true;
+            Player_animController.SetPlayerAnimState(Player_AnimState.Water);
+            Invoke(nameof(End_Water), 0.7f);
         }
-
-        Invoke(nameof(End_Water), 0.7f); 
     }
 
     private void End_Water()
@@ -128,15 +150,15 @@ public class Player : MonoBehaviour
 
     public void Onclick_Plant()
     {
-        isPlant = true;
-        Player_animController.SetPlayerAnimState(Player_AnimState.Plant);
 
-        if (farmSystem != null)
+        if (farmSystem == null || isHarvest || isWater || isPlant) return;
+
+        if (farmSystem.PlantCrop())
         {
-            farmSystem.PlantCrop();
+            isPlant = true;
+            Player_animController.SetPlayerAnimState(Player_AnimState.Plant);
+            Invoke(nameof(End_Plant), 0.7f);
         }
-
-        Invoke(nameof(End_Plant), 0.7f); 
     }
 
     private void End_Plant()

@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: e660cd0ddf38ab94696a6b9138cb7239
+guid: b6192f1bac26f854bafccaa4d68d08b1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8991799587201016403
-    second: Inventory_RoundIcon_0
-  - first:
-      213: 4878980717558242018
-    second: Inventory_RoundIcon_1
+      213: 7528194923671091847
+    second: TileRound_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Inventory_RoundIcon_0
+      name: TileRound_0
       rect:
         serializedVersion: 2
-        x: 57
-        y: 63
-        width: 904
-        height: 901
+        x: 10
+        y: 17
+        width: 1228
+        height: 1234
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dad11618ae5b63380800000000000000
-      internalID: -8991799587201016403
+      spriteID: 78a7051a565897860800000000000000
+      internalID: 7528194923671091847
       vertices: []
       indices: 
       edges: []
@@ -154,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e910313c08d0a24428226223ad7802b4
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -164,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Inventory_RoundIcon_0: -8991799587201016403
-      Inventory_RoundIcon_1: 4878980717558242018
+      TileRound_0: 7528194923671091847
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

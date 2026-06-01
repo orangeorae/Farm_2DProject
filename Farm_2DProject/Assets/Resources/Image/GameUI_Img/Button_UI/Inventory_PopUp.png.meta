@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aed10c01e62236f45b3c7e4350f66dc0
+guid: 7043c82d1fc9424478e80c636029cf29
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -129,10 +129,10 @@ TextureImporter:
       name: Inventory_PopUp_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 354
-        width: 758
-        height: 863
+        x: 13
+        y: 703
+        width: 1513
+        height: 1731
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
