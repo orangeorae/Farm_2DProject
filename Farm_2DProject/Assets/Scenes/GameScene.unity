@@ -1241,7 +1241,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 201
+  m_SortingOrder: 401
   m_TargetDisplay: 0
 --- !u!224 &328755948
 RectTransform:
@@ -6408,7 +6408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9191656828001412523, guid: 4a425ae869dc13d47a5658ef4dcda674, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.4
+      value: 4.26
       objectReference: {fileID: 0}
     - target: {fileID: 9191656828001412523, guid: 4a425ae869dc13d47a5658ef4dcda674, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7029,6 +7029,8 @@ MonoBehaviour:
   InvButton: {fileID: 1428836129}
   InvPopUp: {fileID: 1420180318}
   OffButton: {fileID: 14808205}
+  SlotPrefab: {fileID: 636650566614813119, guid: d33bd245f34d83541ae8c12ded0b886e, type: 3}
+  SlotContentArea: {fileID: 1109150830}
 --- !u!1001 &1895682364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7047,7 +7049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9191656828001412523, guid: 4a425ae869dc13d47a5658ef4dcda674, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.69
+      value: 4.78
       objectReference: {fileID: 0}
     - target: {fileID: 9191656828001412523, guid: 4a425ae869dc13d47a5658ef4dcda674, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7174,6 +7176,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1468384575}
     m_Modifications:
+    - target: {fileID: 2233465440507240117, guid: 4a425ae869dc13d47a5658ef4dcda674, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233465440507240117, guid: 4a425ae869dc13d47a5658ef4dcda674, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233465440507240117, guid: 4a425ae869dc13d47a5658ef4dcda674, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233465440507240117, guid: 4a425ae869dc13d47a5658ef4dcda674, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2400602353335343390, guid: 4a425ae869dc13d47a5658ef4dcda674, type: 3}
       propertyPath: m_Name
       value: CropPlot_1

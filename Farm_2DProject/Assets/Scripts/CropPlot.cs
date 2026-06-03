@@ -11,10 +11,11 @@ public class CropPlot : MonoBehaviour
 
     [SerializeField] private Sprite seedSprite; // 씨앗 이미지
     [SerializeField] private Sprite carrotSprite; // 완전히 자란 당근 이미지
+    [SerializeField] private Sprite dirtSprite; // 흙 이미지
 
 
     public PlotState currentState = PlotState.Empty;  // 처음에는 빈땅 상태
-    public string currentCropID = " "; // 어떤 작물이 심겼는지 데이터 ID 저장용
+    public string currentCropID; // 어떤 작물이 심겼는지 데이터 ID 저장용
 
     private SpriteRenderer spriteRenderer; 
 
@@ -65,6 +66,7 @@ public class CropPlot : MonoBehaviour
         if (currentState != PlotState.ReadyToHarvest) return null;
 
         string harvestItem = currentCropID;
+
         ResetPlot();
 
         return harvestItem;
@@ -74,9 +76,9 @@ public class CropPlot : MonoBehaviour
     {
         currentState = PlotState.Empty;
         currentCropID = " ";
-        if (spriteRenderer != null)
+        if (spriteRenderer != null && dirtSprite != null)
         {
-            spriteRenderer.sprite = null;
+            spriteRenderer.sprite = dirtSprite;
         }
     }
 }

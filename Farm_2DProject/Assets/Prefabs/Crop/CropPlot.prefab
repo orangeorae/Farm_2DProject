@@ -46,10 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e02d38097792fa4daae99954c58f668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CropPlot
-  seedSprite: {fileID: 5346928031986697999, guid: b094b3aff8f40f34db99045729e146ae, type: 3}
-  carrotSprite: {fileID: -5859083586626064994, guid: 7cac47e9952414c46b725a2daa81849e, type: 3}
+  seedSprite: {fileID: 5047366460551250861, guid: bd20b1569bd8cd240acf22df7c28054a, type: 3}
+  carrotSprite: {fileID: 3892953055026775764, guid: 7d4efeae803a33344a6181c65e59f458, type: 3}
+  dirtSprite: {fileID: -8275502208090371910, guid: 7121421465867b94db8aebf884c120fe, type: 3}
   currentState: 2
-  currentCropID: ' '
+  currentCropID: 
 --- !u!212 &2233465440507240117
 SpriteRenderer:
   serializedVersion: 2
@@ -97,7 +98,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 501
+  m_SortingOrder: 201
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8275502208090371910, guid: 7121421465867b94db8aebf884c120fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
