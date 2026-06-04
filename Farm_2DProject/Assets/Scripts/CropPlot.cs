@@ -32,6 +32,13 @@ public class CropPlot : MonoBehaviour
             return false;
         }
 
+        //DataManager에서 이 작물의 정보를 가져온다.
+        CropData data = DataManager.Instance.GetCropData(cropID);
+        if (data == null)
+        {
+            Debug.LogError($"[CropPlot] {cropID}에 해당하는 작물 데이터가 없습니다.");
+            return false;
+        }
         currentCropID = cropID; //매개변수로 넘겨받은 작물 이름을 저장 
 
         currentState = PlotState.Planted;

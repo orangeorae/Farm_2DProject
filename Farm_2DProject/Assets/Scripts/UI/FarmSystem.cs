@@ -25,10 +25,10 @@ public class FarmSystem : MonoBehaviour
        
     }
 
-    public bool PlantCrop()
+    public bool PlantCrop(string cropID)
     {
         if (currentTargetPlot == null) return false; // 플레이어 발 밑에 밭이 없으면 false 반환 
-        return currentTargetPlot.PlantCrop("Carrot"); // 당근 이름 넘겨주며 심기
+        return currentTargetPlot.PlantCrop(cropID); 
     }
 
     public bool WaterCrop()

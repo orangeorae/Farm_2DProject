@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Default Local Group
+  m_GUID: 9324b188baf752045bd1afd69f46ce02
+  m_SerializeEntries:
+  - m_GUID: 0d88106a8c82d1c408ecb01e527df3b7
+    m_Address: Assets/Resources_moved/Image/Crop_IMG/Carrot_Seed.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7cac47e9952414c46b725a2daa81849e
+    m_Address: Assets/Resources_moved/Image/Crop_IMG/Carrot.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d4efeae803a33344a6181c65e59f458
+    m_Address: Crop_Carrot
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bd20b1569bd8cd240acf22df7c28054a
+    m_Address: Seed_Carrot
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 9bfcc1959ea54894f8cfdcf260d18aaf, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2629817a2120f0f47ba8e29e450a5ddf, type: 2}
+    - {fileID: 11400000, guid: 5ca76ecd55870054e993e7b419ab0d44, type: 2}

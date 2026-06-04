@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Player_AnimController Player_animController;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private FarmSystem farmSystem;
+
+    public string CurrentSelectCropID { get; set; } = "Carrot"; // 플레이어가 손에 들고있는 씨앗 (기본 값 당근으로 일단 둠)
     public JoyStick joyStick;
 
     public Button plantBtn;
@@ -153,7 +155,7 @@ public class Player : MonoBehaviour
 
         if (farmSystem == null || isHarvest || isWater || isPlant) return;
 
-        if (farmSystem.PlantCrop())
+        if (farmSystem.PlantCrop(CurrentSelectCropID))
         {
             isPlant = true;
             Player_animController.SetPlayerAnimState(Player_AnimState.Plant);
