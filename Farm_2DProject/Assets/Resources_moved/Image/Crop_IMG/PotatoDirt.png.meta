@@ -1,13 +1,34 @@
 fileFormatVersion: 2
-guid: 7cac47e9952414c46b725a2daa81849e
+guid: 7bb5f211a86d5204d8681a677e5f2916
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5859083586626064994
-    second: Carrot_0
+      213: 5709341434759559742
+    second: PotatoDirt_0
   - first:
-      213: -2094157912208876536
-    second: Carrot_1
+      213: -2433645979276986749
+    second: PotatoDirt_1
+  - first:
+      213: -5225490042635045471
+    second: PotatoDirt_2
+  - first:
+      213: 4012200259437330009
+    second: PotatoDirt_3
+  - first:
+      213: 7756823918200977570
+    second: PotatoDirt_4
+  - first:
+      213: 4054659131537491892
+    second: PotatoDirt_5
+  - first:
+      213: -5768511213830498216
+    second: PotatoDirt_6
+  - first:
+      213: 7058777836254430516
+    second: PotatoDirt_7
+  - first:
+      213: -2265589976054543685
+    second: PotatoDirt_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -54,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1500
+  spritePixelsToUnits: 3072
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +99,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,13 +150,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Carrot_0
+      name: PotatoDirt_1
       rect:
         serializedVersion: 2
-        x: 695
-        y: 165
-        width: 714
-        height: 1807
+        x: 199
+        y: 219
+        width: 1936
+        height: 1449
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,8 +165,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e9de4dd458a50bea0800000000000000
-      internalID: -5859083586626064994
+      spriteID: 386332830e3f93ed0800000000000000
+      internalID: -2433645979276986749
       vertices: []
       indices: 
       edges: []
@@ -154,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: baed5f41cddc19c488a97d4648fa5168
+    spriteID: 413c685283f27d7458de03ad813ee502
     internalID: 0
     vertices: []
     indices: 
@@ -164,8 +185,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Carrot_0: -5859083586626064994
-      Carrot_1: -2094157912208876536
+      PotatoDirt_0: 5709341434759559742
+      PotatoDirt_1: -2433645979276986749
+      PotatoDirt_2: -5225490042635045471
+      PotatoDirt_3: 4012200259437330009
+      PotatoDirt_4: 7756823918200977570
+      PotatoDirt_5: 4054659131537491892
+      PotatoDirt_6: -5768511213830498216
+      PotatoDirt_7: 7058777836254430516
+      PotatoDirt_8: -2265589976054543685
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

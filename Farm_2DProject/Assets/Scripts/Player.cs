@@ -111,6 +111,13 @@ public class Player : MonoBehaviour
         }
     }
 
+
+    public void ChangeSelectSeed(string seedId)
+    {
+        CurrentSelectCropID = seedId;
+        Debug.Log($"[Player] 현재 손에 든 씨앗 변경 완료: {CurrentSelectCropID}");
+    }
+
     public void Onclick_Harvest()
     {
         if (farmSystem == null || isHarvest || isWater || isPlant) return;

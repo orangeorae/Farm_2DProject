@@ -15,13 +15,23 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 9324b188baf752045bd1afd69f46ce02
   m_SerializeEntries:
-  - m_GUID: 0d88106a8c82d1c408ecb01e527df3b7
-    m_Address: Assets/Resources_moved/Image/Crop_IMG/Carrot_Seed.png
+  - m_GUID: 27ab63f686c414344ad4e19ac1089a4b
+    m_Address: Assets/Resources_moved/Image/Icon_IMG/Carrot.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7cac47e9952414c46b725a2daa81849e
-    m_Address: Assets/Resources_moved/Image/Crop_IMG/Carrot.png
+  - m_GUID: 45c017b7d82ae9b459a1c7ace0128516
+    m_Address: Seed_Potato
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 57bba41ea84b66c4ab59353b7d5e4b5a
+    m_Address: Assets/Resources_moved/Image/Icon_IMG/Potato.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7bb5f211a86d5204d8681a677e5f2916
+    m_Address: Crop_Potato
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

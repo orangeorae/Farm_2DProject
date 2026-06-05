@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: b62d5084fe0fb364e8f16eaec7a18ce0
+guid: ade2d16472c06904dae3d19a1a851a67
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6046389267241100807
-    second: CarrotIcon_0
+      213: -7630985556951761968
+    second: SelectCrop_0
+  - first:
+      213: -8686633860015896119
+    second: SelectCrop_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +129,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CarrotIcon_0
+      name: SelectCrop_0
       rect:
         serializedVersion: 2
-        x: 862
-        y: 225
-        width: 1089
-        height: 1085
+        x: 245
+        y: 134
+        width: 728
+        height: 3243
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f91c502ff8e61ca0800000000000000
-      internalID: -6046389267241100807
+      spriteID: 0dbf0cf011b491690800000000000000
+      internalID: -7630985556951761968
       vertices: []
       indices: 
       edges: []
@@ -151,7 +154,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 80500f075345c3b4f8fa01750201fc1c
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +164,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CarrotIcon_0: -6046389267241100807
+      SelectCrop_0: -7630985556951761968
+      SelectCrop_1: -8686633860015896119
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
