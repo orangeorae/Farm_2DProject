@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "Order_01",
+    "MenuName": "당근 주스",
+    "MenuSpritePath": "Menu_CarrotJucie",
+    "RequireCrop": "당근(Carrot)",
+    "RequireCount": "3",
+    "RewardGold": 500
+  },
+  {
+    "Id": "Order_02",
+    "MenuName": "당감당감 케이크",
+    "MenuSpritePath": "Menu_CarrotPotatoCake",
+    "RequireCrop": "당근(Carrot), 감자(Potato)",
+    "RequireCount": "2,2",
+    "RewardGold": 1500
+  },
+  {
+    "Id": "Order_03",
+    "MenuName": "감자 수프",
+    "MenuSpritePath": "Menu_PotatoSoup",
+    "RequireCrop": "감자(Potato)",
+    "RequireCount": "3",
+    "RewardGold": 500
+  }
+]

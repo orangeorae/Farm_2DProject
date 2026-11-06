@@ -15,8 +15,13 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 9324b188baf752045bd1afd69f46ce02
   m_SerializeEntries:
+  - m_GUID: 14cd72786f199e444916abb7bf530011
+    m_Address: Menu_PotatoSoup
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 27ab63f686c414344ad4e19ac1089a4b
-    m_Address: Assets/Resources_moved/Image/Icon_IMG/Carrot.png
+    m_Address: Require_Carrot
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -26,7 +31,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 57bba41ea84b66c4ab59353b7d5e4b5a
-    m_Address: Assets/Resources_moved/Image/Icon_IMG/Potato.png
+    m_Address: Require_Potato
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 69a24b39be10d1e4a846c6205490176f
+    m_Address: Menu_CarrotPotatoCake
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -42,6 +52,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bd20b1569bd8cd240acf22df7c28054a
     m_Address: Seed_Carrot
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c2d2202b3ea051044949da686d3e03b6
+    m_Address: Menu_CarrotJucie
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

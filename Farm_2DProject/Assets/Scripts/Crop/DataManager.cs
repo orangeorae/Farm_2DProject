@@ -22,6 +22,7 @@ public class DataManager : MonoBehaviour
     }
 
     public Dictionary<string, CropData> CropDataList { get; private set; } = new Dictionary<string, CropData>();
+    public Dictionary<string, CafeData> CafeDataList { get; private set; } = new Dictionary<string, CafeData>();
 
     private Dictionary<string, T> LoadData<T>(string tableName) where T : DataBase
     {
@@ -66,11 +67,22 @@ public class DataManager : MonoBehaviour
     {
         CropDataList = LoadData<CropData>(jsonPath);
     }
+    public void LoadCafeData(string jsonPath) //농작물 데이터 로드 함수
+    {
+        CafeDataList = LoadData<CafeData>(jsonPath);
+    }
 
     public CropData GetCropData(string id) // TryGetValue를 통해  Dictionary에서  안전 + 빠르게 데이터 추출
     {
         if (CropDataList == null || string.IsNullOrEmpty(id)) return null;
 
         return CropDataList.TryGetValue(id, out var data) ? data : null;
+    }
+
+    public CafeData GetCafeData(string id) // TryGetValue를 통해  Dictionary에서  안전 + 빠르게 데이터 추출
+    {
+        if (CafeDataList == null || string.IsNullOrEmpty(id)) return null;
+
+        return CafeDataList.TryGetValue(id, out var data) ? data : null;
     }
 }

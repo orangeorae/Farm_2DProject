@@ -17,3 +17,14 @@ public class CropData : DataBase //농작물 세부 기획 데이터 클래스
     public string GrownSpritePath;
 
 }
+
+[System.Serializable]
+public class CafeData : DataBase //카페 세부 기획 데이터 클래스
+{
+    public string MenuName;
+    public string MenuSpritePath;
+    public string RequireCrop;
+    public string RequireCount;
+    public int RewardGold;
+
+}

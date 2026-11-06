@@ -7,6 +7,7 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 /[Mm]emory[Cc]aptures/
+/Farm_2DProject/[Aa]ssets/[Ff]ont/
 
 # AssetStore 패키지는 프로젝트에 포함되지만, UPM 캐시는 제외됩니다.
 /[Pp]ackages/*
