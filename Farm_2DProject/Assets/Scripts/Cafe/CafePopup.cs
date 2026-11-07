@@ -14,6 +14,8 @@ public class CafePopup : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Text_reward; // 보상
     [SerializeField] private Image Image_Menu;
 
+    [SerializeField] private Button Btn_Complete;
+
     [SerializeField] private Inventory inventory;
 
     private List<CafeData> _allQuest  = new List<CafeData>(); // 카페 퀘스트 리스트 
@@ -38,6 +40,16 @@ public class CafePopup : MonoBehaviour
         InitCafeQuest();
     }
 
+    private void OnEnable()
+    {
+        Btn_Complete.onClick.AddListener(OnClick_CompleteQuest);
+    }
+
+    private void OnDisable()
+    {
+        Btn_Complete.onClick.RemoveListener(OnClick_CompleteQuest);
+
+    }
     public void OpenPopup()
     {
         Prefab_CafePopup.SetActive(true);
@@ -78,6 +90,56 @@ public class CafePopup : MonoBehaviour
         Prefab_CafePopup.SetActive(false);
     }
 
+    private string[] GetParsedCrops() // 중복으로 작물이름 쪼개는 것을 방지하기위에 공용 메서드/ 배열 반환 
+    {
+        if(_currentQuest == null)
+        {
+            return null;
+        }
+
+        string[] rawCrops =_currentQuest.RequireCrop.Split(',');
+        string[] crops = new string[rawCrops.Length];
+
+        for(int i = 0; i< rawCrops.Length; i++)
+        {
+            string cropStr = rawCrops[i].Trim();
+
+            if(cropStr.Contains("(") && cropStr.Contains(")")) //괄호가 포함되어 있을 때 괄호안의 내용만 추출 
+            {
+                int startIndex = cropStr.IndexOf("(") +1;
+                int endIndex = cropStr.IndexOf(")");
+
+                crops[i] = cropStr.Substring(startIndex, endIndex - startIndex);
+            }
+
+            else //괄호가 없다면 그대로 사용
+            {
+                crops[i] = cropStr;
+            }
+
+            
+        }
+        return crops;
+    }
+
+    private int[] GetParseCounts()
+    {
+        if (_currentQuest == null)
+        {
+            return null;
+        }
+
+        string[] rawCounts = _currentQuest.RequireCount.Split(',');
+        int [] counts = new int[rawCounts.Length];
+
+        for (int i = 0; i < rawCounts.Length; i++) 
+        {
+            counts[i] = int.Parse(rawCounts[i].Trim());
+        }
+        return counts;
+
+    }
+
     private void InitCafeQuest()
     {
         if (DataManager.Instance != null)
@@ -95,10 +157,56 @@ public class CafePopup : MonoBehaviour
             }
         }
     }
+    public void OnClick_CompleteQuest()
+    {
 
+        Debug.Log("납품하기 버튼 클릭");
+        if(_currentQuest == null)
+        {
+            Debug.Log("[CafePopup] 진행 중인 퀘스트가 없습니다.");
+            return;
+        }
+
+        string[] crops = GetParsedCrops();
+        int[] counts =GetParseCounts();
+
+        for (int i = 0; i < crops.Length; i++)  // 재료를 충분히 가지고 있는지 확인
+        {
+            if(inventory == null || inventory.HasItem(crops[i], counts[i]) == false)
+            {
+                Debug.Log($"[CafePopup] 재료가 부족합니다.");
+
+                return;
+            }
+        }
+
+        for (int i = 0; i < crops.Length; i++)  //재료가 모두 충분하다는 조건 하에 인벤토리에서 개수 차감 
+        {
+            inventory.RemoveItem(crops[i], counts[i]);
+        }
+
+        Debug.Log($"[CafePopup] 퀘스트 완료! 보상으로{_currentQuest.RewardGold} 골드를 획득했습니다.");
+
+        if (_remainQuest.Contains(_currentQuest))
+        {
+            _remainQuest.Remove(_currentQuest);
+        }
+
+        _currentQuest = null; //현재 퀘스트 초기화 
+
+        ClosePopup();
+    }
     private void ResetQuest()
     {
         _remainQuest = new List<CafeData>(_allQuest);
+
+        for (int i = 0; i < _remainQuest.Count; i++)
+        {
+            int randomIndex = Random.Range(i, _remainQuest.Count);
+            CafeData temp = _remainQuest[i];
+            _remainQuest[i] = _remainQuest[randomIndex];
+            _remainQuest[randomIndex] = temp; ;
+        }
         Debug.Log("모든 카페 퀘스트 완료 / 퀘스트 목록이 초기화 되었습니다.");
     }
 
@@ -117,17 +225,14 @@ public class CafePopup : MonoBehaviour
         if(Text_Ingredient != null) 
         {
             //쉼표를 기준으로 여러 개로 묶인 작물 이름과 수량을 각각 문자열 배열로 쪼개기 
-            string[] crops = _currentQuest.RequireCrop.Split(','); 
-            string[] counts = _currentQuest.RequireCount .Split(",");
+            string[] crops = _currentQuest.RequireCrop.Split(',');
+            int[] counts = GetParseCounts();
 
             string requireText = "";
 
             for (int i = 0; i < crops.Length; i++) // 쪼갠 데이터 개수만큼 반복문을 돌며 한줄씩 맞추기 
             {
-                string cropName = crops[i].Trim(); // 앞뒤 불필요한 공백 제거 
-                string cropCount = counts[i].Trim();
-
-                requireText += $"{cropName}: {cropCount}개 필요";
+                requireText += $"{crops[i]}: {counts[i]}개 필요";
 
                 if (i < crops.Length - 1) // 마지막 재료가 아니라면 줄바꿈
                 {
@@ -176,7 +281,7 @@ public class CafePopup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("카페 영역 진입");
+            Debug.Log("카페 영역 이탈");
 
             ClosePopup();
         }

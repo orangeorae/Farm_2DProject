@@ -762,6 +762,17 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &257243743 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1012285612355689000, guid: 22937dd0b51423d44b8cafcf08a146fa, type: 3}
+  m_PrefabInstance: {fileID: 7953424869355760041}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &266631116
 GameObject:
   m_ObjectHideFlags: 0
@@ -6829,6 +6840,7 @@ MonoBehaviour:
   Text_Ingredient: {fileID: 2120254998}
   Text_reward: {fileID: 196663700}
   Image_Menu: {fileID: 490592143}
+  Btn_Complete: {fileID: 257243743}
   inventory: {fileID: 1873018950}
 --- !u!1 &1859706291
 GameObject:
@@ -7989,7 +8001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1020871497987387002, guid: 22937dd0b51423d44b8cafcf08a146fa, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1531397338780910098, guid: 22937dd0b51423d44b8cafcf08a146fa, type: 3}
       propertyPath: m_SizeDelta.x

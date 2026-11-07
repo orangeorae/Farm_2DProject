@@ -1,7 +1,7 @@
 [
   {
     "Id": "Carrot",
-    "CropName": "당근",
+    "CropName": "당근(Carrot)",
     "SeedPrice": 20,
     "SellPrice": 50,
     "SeedSpritePath": "Seed_Carrot",
@@ -9,7 +9,7 @@
   },
   {
     "Id": "Potato",
-    "CropName": "감자",
+    "CropName": "감자(Potato)",
     "SeedPrice": 30,
     "SellPrice": 60,
     "SeedSpritePath": "Seed_Potato",

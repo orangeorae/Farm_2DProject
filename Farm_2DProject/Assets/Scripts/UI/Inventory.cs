@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,6 +51,40 @@ public class Inventory : MonoBehaviour
 
         Debug.Log($"[인벤토리] {cropName} 획득 / 현재 수: {cropItem[cropName]}개");
         UpdateInventoryUI();
+    }
+
+    public bool HasItem(string cropName, int requiredCount)
+    {
+        bool hasEnough = false;
+
+        if (cropItem.ContainsKey(cropName))//인벤토리에서 해당 작물이름 확인 
+        {
+            int currentCount = cropItem[cropName]; //수량 가져오기 
+
+            if(currentCount >= requiredCount) //수량 비교
+            {
+                hasEnough = true;
+            }
+        }
+
+        return hasEnough;
+    }
+
+
+    public void RemoveItem(string cropName, int count)
+    {
+        if (cropItem.ContainsKey(cropName))
+        {
+            cropItem[cropName] -= count;
+
+            if (cropItem[cropName] <= 0)
+            {
+                cropItem[cropName] = 0;
+            }
+
+            Debug.Log($"[Inventory] {cropName} {count}개 차감 완료 ");
+            UpdateInventoryUI();
+        }
     }
 
     public void UpdateInventoryUI() //당근데이터를 화면의 Text에 그려줌
