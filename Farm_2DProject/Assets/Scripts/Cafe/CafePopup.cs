@@ -12,11 +12,14 @@ public class CafePopup : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Text_menuName;
     [SerializeField] private TextMeshProUGUI Text_Ingredient; //필요 작물
     [SerializeField] private TextMeshProUGUI Text_reward; // 보상
+    [SerializeField] private TextMeshProUGUI Text_PlayerGold;
     [SerializeField] private Image Image_Menu;
 
     [SerializeField] private Button Btn_Complete;
 
     [SerializeField] private Inventory inventory;
+
+    private int _currentCoin;
 
     private List<CafeData> _allQuest  = new List<CafeData>(); // 카페 퀘스트 리스트 
     private List<CafeData> _remainQuest = new List<CafeData>(); // 남은 퀘스트 리스트
@@ -38,16 +41,29 @@ public class CafePopup : MonoBehaviour
     private void Start()
     {
         InitCafeQuest();
+        UpdateGoldUI(_currentCoin);
     }
 
     private void OnEnable()
     {
         Btn_Complete.onClick.AddListener(OnClick_CompleteQuest);
+
+        if (GameManager.Instance != null) 
+        {
+            _currentCoin = GameManager.Instance.PlayerGold;
+            GameManager.Instance.OnGoldChanged += UpdateGoldUI;
+            UpdateGoldUI(_currentCoin);
+        }
     }
 
     private void OnDisable()
     {
         Btn_Complete.onClick.RemoveListener(OnClick_CompleteQuest);
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnGoldChanged -= UpdateGoldUI;
+        }
 
     }
     public void OpenPopup()
@@ -73,7 +89,7 @@ public class CafePopup : MonoBehaviour
             Debug.Log($"[CafePopup] 랜덤 선택된 메뉴: {_currentQuest.MenuName}");
         }*/
 
-        if(_currentQuest == null && _remainQuest.Count > 0) //진행 중인 퀘스트가 없을 경우에만 다시 랜덤 퀘스트 
+        if(_currentQuest == null && _remainQuest.Count > 0) //진행 중인 퀘스트가 없고 남은 퀘스트가 존재하면 거기서 다시 랜덤 퀘스트 
         {
             int randomIndex = Random.Range(0, _remainQuest.Count);
             _currentQuest = _remainQuest[randomIndex];
@@ -81,8 +97,6 @@ public class CafePopup : MonoBehaviour
         }
 
         DisplayPopupData();
-
-
     }
 
     public void ClosePopup()
@@ -187,6 +201,16 @@ public class CafePopup : MonoBehaviour
 
         Debug.Log($"[CafePopup] 퀘스트 완료! 보상으로{_currentQuest.RewardGold} 골드를 획득했습니다.");
 
+        if(GameManager.Instance != null)
+        {
+            GameManager.Instance.AddGold(_currentQuest.RewardGold);
+        }
+
+        else
+        {
+            Debug.LogWarning("GameManager가 존재하지 않습니다.");
+        }
+
         if (_remainQuest.Contains(_currentQuest))
         {
             _remainQuest.Remove(_currentQuest);
@@ -210,6 +234,13 @@ public class CafePopup : MonoBehaviour
         Debug.Log("모든 카페 퀘스트 완료 / 퀘스트 목록이 초기화 되었습니다.");
     }
 
+    private void UpdateGoldUI(int currentGold)
+    {
+        if(Text_PlayerGold != null )
+        {
+            Text_PlayerGold.text = $"{currentGold}";
+        }
+    }
     private void DisplayPopupData()
     {
         if(_currentQuest == null)

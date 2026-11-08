@@ -67,7 +67,7 @@ public class DataManager : MonoBehaviour
     {
         CropDataList = LoadData<CropData>(jsonPath);
     }
-    public void LoadCafeData(string jsonPath) //농작물 데이터 로드 함수
+    public void LoadCafeData(string jsonPath) //카페  데이터 로드 함수
     {
         CafeDataList = LoadData<CafeData>(jsonPath);
     }

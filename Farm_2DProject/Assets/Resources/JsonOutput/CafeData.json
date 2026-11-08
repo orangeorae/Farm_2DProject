@@ -11,7 +11,7 @@
     "Id": "Order_02",
     "MenuName": "당감당감 케이크",
     "MenuSpritePath": "Menu_CarrotPotatoCake",
-    "RequireCrop": "당근(Carrot), 감자(Potato)",
+    "RequireCrop": "당근(Carrot),감자(Potato)",
     "RequireCount": "2,2",
     "RewardGold": 1500
   },
